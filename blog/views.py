@@ -12,7 +12,7 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):
-    if request.method == "GET":
+    if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
